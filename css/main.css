@@ -59,6 +59,7 @@ body {
 .info--text__status--listening {
   display: flex;
   align-content: center;
+  white-space: nowrap;
 }
 .info--text__status--listening a {
   display: flex;
