@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pyrrha</title>
+
+  <link rel="stylesheet" href="css/main.css" />
+  <script>
+    window.onLanyardLoad = (data) => { };
+    fetch("https://api.lanyard.rest/v1/users/97172171259904000").then(
+      (data) => {
+        data.json().then((data) => {
+          window.lanyard = data;
+          window.onLanyardLoad(data);
+        });
+      }
+    );
+  </script>
+</head>
+
+<body>
+  <main class="main">
+    <div class="info">
+      <div class="info--avatar">
+        <img id="avatar" alt="py's avatar" />
+      </div>
+      <div class="info--text__container">
+        <div class="info--text">
+          <div class="info--text__inner headline-large">Pyrrha</div>
+          <div class="info--text__pronouns title-medium">She/They</div>
+        </div>
+        <div class="info--text">
+          <div class="status-dot__container">
+            <div id="status-dot" class="status-dot"></div>
+          </div>
+          <div id="status-text" class="info--text__status headline-small"></div>
+        </div>
+      </div>
+      <script>
+        window.onLanyardLoad = (lanyard) => {
+          console.log(lanyard);
+
+          // prep data
+          window.py = {
+            avatarUrl: `https://cdn.discordapp.com/avatars/97172171259904000/${lanyard.data.discord_user.avatar}.webp?size=512`,
+            isOnline: lanyard.data.discord_status != "offline",
+            isSpotifyPlaying: lanyard.data.listening_to_spotify == true,
+            spotify: lanyard.data.spotify,
+            isLive: lanyard.data.activities.filter((activity) => activity.type == 1 /* streaming */).length != 0,
+          };
+          console.log(window.py);
+
+          const params = new URLSearchParams(window.location.search);
+          const debugStatus = params.get("debugStatus");
+
+          // do page things
+          document.getElementById("avatar").src = window.py.avatarUrl;
+
+          if (window.py.isLive || debugStatus == "live") {
+            document.getElementById("status-dot").className = "status-dot status-dot--live";
+
+            const liveLink = document.createElement("a");
+            liveLink.target = "_blank";
+            liveLink.href = "https://twitch.tv/JustPyrrha";
+            liveLink.text = "Live on Twitch";
+            document.getElementById("status-text").appendChild(liveLink);
+          } else if (window.py.isSpotifyPlaying || debugStatus == "spotify") {
+            document.getElementById("status-dot").className = "status-dot status-dot--online";
+            document.getElementById("status-text").className = "info--text__status info--text__status--listening headline-small"
+            document.getElementById("status-text").innerText = "Listening to ";
+            const spotifyArt = document.createElement("img");
+            spotifyArt.src = window.py.spotify.album_art_url
+            spotifyArt.alt = "album art"
+            spotifyArt.width = 22.5
+
+            const spotifyLink = document.createElement("a");
+            spotifyLink.target = "_blank";
+            spotifyLink.href = `https://open.spotify.com/track/${window.py.spotify.track_id ?? ""}`;
+            spotifyLink.appendChild(spotifyArt)
+            spotifyLink.append(`${window.py.spotify.song ?? "unknown"} by ${window.py.spotify.artist ?? "unknown"}`);
+            document.getElementById("status-text").appendChild(spotifyLink);
+          } else if (window.py.isOnline) {
+            document.getElementById("status-dot").className = "status-dot status-dot--online";
+            document.getElementById("status-text").innerText = "Online";
+          } else {
+            document.getElementById("status-dot").className = "status-dot status-dot--offline";
+            document.getElementById("status-text").innerText = "Offline";
+          }
+        }
+      </script>
+    </div>
+  </main>
+</body>
+
+</html>

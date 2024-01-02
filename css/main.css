@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(theme/theme.css);
+
+body {
+  margin: 0;
+  background-color: var(--md-sys-color-background);
+}
+
+.main {
+  margin: 15%;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+}
+
+.info--avatar {
+  padding-right: 25px;
+  width: 128px;
+  height: 128px;
+}
+
+.info--avatar img {
+  border-radius: 50%;
+  border: 5px solid var(--md-sys-color-primary);
+  background-color: var(--md-sys-color-primary-container);
+  width: 128px;
+  height: 128px;
+}
+
+.info--text__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info--text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.info--text__inner {
+  padding: 10px;
+  padding-left: 0;
+  color: var(--md-sys-color-tertiary);
+}
+
+.info--text__pronouns {
+  padding: 5px;
+  color: var(--md-sys-color-on-error);
+  background-color: var(--md-sys-color-error);
+  border-radius: 8px;
+}
+
+.info--text__status {
+  color: var(--md-sys-color-secondary);
+}
+
+.info--text__status--listening {
+  display: flex;
+  align-content: center;
+}
+.info--text__status--listening a {
+  display: flex;
+  align-content: center;
+  text-align: center;
+}
+
+.info--text__status a {
+  color: var(--md-sys-color-secondary);
+  text-decoration: none;
+}
+
+.info--text__status img {
+  border-radius: 50%;
+  border: 2px solid var(--md-sys-color-secondary);
+  margin: 5px;
+  margin-top: 2.5px;
+}
+
+.status-dot__container {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border-style: none;
+  animation: none;
+  background-clip: padding-box;
+}
+
+.status-dot--online {
+  background-color: var(--md-sys-color-secondary);
+}
+
+.status-dot--offline {
+  background-color: var(--md-sys-color-secondary-container);
+}
+
+.status-dot--live {
+  animation: live-dot 2s ease-out infinite;
+  border-style: solid;
+  background-color: var(--brand-color-twitch);
+}
+
+@keyframes live-dot {
+  from {
+    border-width: 0px;
+    border-color: rgba(145, 70, 255, 0.75);
+  }
+  to {
+    border-width: 5px;
+    border-color: rgba(145, 70, 255, 0);
+  }
+}
