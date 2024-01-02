@@ -40,7 +40,6 @@
       </div>
       <script>
         window.onLanyardLoad = (lanyard) => {
-          console.log(lanyard);
 
           // prep data
           window.py = {
@@ -50,7 +49,6 @@
             spotify: lanyard.data.spotify,
             isLive: lanyard.data.activities.filter((activity) => activity.type == 1 /* streaming */).length != 0,
           };
-          console.log(window.py);
 
           const params = new URLSearchParams(window.location.search);
           const debugStatus = params.get("debugStatus");
