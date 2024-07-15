@@ -1,0 +1,11 @@
+{
+  "url": "https://pyrrha.gay/embed.html",
+  "html": "\u003Cscript type=\"text/javascript\" \u003Ealert(\"xss\");\u003C/script\u003E>\n\ntest",
+  "width": 550,
+  "height": null,
+  "type": "rich",
+  "cache_age": "3153600000",
+  "provider_name": "Pyrrha",
+  "provider_url": "https://pyrrha.gay",
+  "version": "1.0"
+}
