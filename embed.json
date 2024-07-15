@@ -1,6 +1,6 @@
 {
-  "url": "https://pyrrha.gay/embed2.html",
-  "html": "\u003Cscript type=\"text/javascript\" \u003Ealert(\"xss\");\u003C/script\u003E>\n\ntest",
+  "url": "https://pyrrha.gay/embed3.html",
+  "html": "test\n\n\u003Cscript async src=\"https://pyrrha.gay/embed.js\" charset=\"utf-8\"\u003E\u003C/script\u003E",
   "width": 550,
   "height": null,
   "type": "rich",
