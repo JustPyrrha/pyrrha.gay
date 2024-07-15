@@ -1,5 +1,5 @@
 {
-  "url": "https://pyrrha.gay/embed.html",
+  "url": "https://pyrrha.gay/embed2.html",
   "html": "\u003Cscript type=\"text/javascript\" \u003Ealert(\"xss\");\u003C/script\u003E>\n\ntest",
   "width": 550,
   "height": null,
