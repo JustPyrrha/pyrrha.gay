@@ -110,6 +110,11 @@ body {
   background-color: var(--brand-color-twitch);
 }
 
+.social-link {
+  text-decoration: none;
+  color: var(--md-sys-color-tertiary);
+}
+
 @keyframes live-dot {
   from {
     border-width: 0px;
