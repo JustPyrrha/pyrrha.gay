@@ -1,0 +1,3 @@
+[submodule "packs"]
+	path = packs
+	url = git@github.com:JustPyrrha/packs.git
