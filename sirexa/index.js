@@ -113,8 +113,11 @@ const handle_input_change = (text, el) => {
  * @param {HTMLTextAreaElement} el
  */
 const handle_submit = (el) => {
-    handle_prompt(el.value);
-    el.value = "";
+    if (!(el.value === "" || el.value === null || el.value === undefined)) {
+        handle_prompt(el.value);
+        el.value = "";
+        handle_input_change(el.value, prompt_submit);
+    }
 }
 
 /**
