@@ -1,0 +1,233 @@
+@font-face {
+    font-display:swap;
+    font-family:OpenAI Sans;
+    font-style:normal;
+    font-weight:600;
+    src:url(./assets/fonts/OpenAISans-Semibold.woff2)format("woff2")
+}
+
+.fake-link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.prompt {
+    background-color: #212121e6;
+    border-radius: 2rem;
+    border-color: rgba(255, 255, 255, 0.05);
+    border-style: solid;
+    border-width: 1px;
+    height: 54px;
+    width: 50rem;
+}
+
+.prompt-content {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.prompt-input {
+    display: flex;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    resize: none;
+    padding-right: 5px;
+    color: white;
+    line-height: 24px;
+    padding-left: 12px;
+    height: 30px;
+
+    padding-top: 4px;
+
+    font-family: "-apple-system-body", "ui-sans-serif", "-apple-system", "system-ui", "Segoe UI", "Helvetica", "Apple Color Emoji", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.prompt-input:focus {
+    outline: none;
+    border: none;
+}
+
+.prompt-input::placeholder {
+    color: #afafaf;
+    opacity: 1;
+}
+
+.prompt-submit {
+    border-radius: 100%;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.prompt-submit-visible {
+    display: block;
+}
+
+.prompt-submit-hidden {
+    display: none;
+}
+
+.wordmark {
+    font-family: OpenAI Sans, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    font-size: 1.125rem;
+    padding: 4px 10px;
+}
+
+.layout {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 8px;
+    width: 100%;
+}
+
+.content-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    overflow: auto;
+}
+
+.content-main__spacer {
+    display: flex;
+    flex-grow: 1;
+}
+
+.message-user {
+    margin-left: 20rem;
+    margin-right: 20rem;
+    align-self: flex-end;
+    background-color: rgba(50, 50, 50, 0.85);
+    border-radius: 25px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.message-user__content {
+    padding: 10px 16px;
+}
+
+.message-sirexa {
+    margin-left: 20rem;
+    margin-right: 20rem;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    align-self: flex-start;
+}
+
+.disclaimer {
+    color: #afafaf;
+    font-size: 14px;
+    margin: 2px 0;
+}
+
+.sidebar {
+    width: 51px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+}
+
+.sidebar-item img {
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+    margin: 8px;
+}
+
+.credit-btn {
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: transparent;
+
+    :hover {
+        background-color: #ffffff26;
+    }
+    svg {
+        border-radius: 0.5rem;
+        padding: 6px;
+    }
+}
+
+.credit-popover {
+    background-color: rgb(33, 33, 33);
+    color: white;
+    border-radius: 2rem;
+    border-color: rgba(255, 255, 255, 0.05);
+    border-style: solid;
+    border-width: 1px;
+
+    > ul {
+        list-style-type: none;
+        padding: 16px;
+        margin: 0;
+
+        > li {
+            > img {
+                width: 24px;
+                height: 24px;
+            }
+            > a {
+                text-decoration: underline;
+                color: white;
+            }
+        }
+    }
+}
+
+.src-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.src-link {
+    text-decoration: underline;
+    color: #afafaf;
+    font-family: monospace;
+}
+
+::backdrop {
+    backdrop-filter: blur(2px);
+}
+
+body {
+    overflow: hidden;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    font-family: "-apple-system-body", "ui-sans-serif", "-apple-system", "system-ui", "Segoe UI", "Helvetica", "Apple Color Emoji", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
+}
