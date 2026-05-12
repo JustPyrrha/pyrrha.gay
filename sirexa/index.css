@@ -142,6 +142,11 @@
     color: #afafaf;
     font-size: 14px;
     margin: 2px 0;
+
+    > a {
+        text-decoration: underline;
+        color: #afafaf;
+    }
 }
 
 .sidebar {
